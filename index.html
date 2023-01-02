@@ -2,12 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>小孙同学</title>
+  <title>Love LuLu</title>
   <meta name="language" content="zh-CN">
-  <meta name="title" content="小孙同学">
-  <meta name="github" content="https://github.com/sun0225SUN/Awesome-Love-Code">
-  <meta name="describe" content="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦! ">
-  <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/img/20210715233345.png">
+  <meta name="title" content="Love Lulu">
   <link type="text/css" rel="stylesheet" href="css/theme.css" />
   <script src="js/jquery-2.0.3.min.js"></script>
 </head>
@@ -24,6 +21,7 @@
           <h1></h1>
           <img class="img_oy_text" src="" />
           <p class="p_oy_text"></p>
+          <p>等一个自然而然的晴天，我想要带你去海边，时间是夏至未至之前。</p>
           <div></div>
 
           <ul id="ul_oy_benefit">
@@ -51,8 +49,8 @@
         </div>
         <ul id="ul_oy_btn">
 
-          <li onclick="oy_go_next()">Yes&nbsp;&nbsp;❤</li>
-          <li onclick="oy_show_benefit()">No&nbsp;&nbsp;✖</li>
+          <li onclick="oy_go_next()">→ A Letter For LuLu. ❤</li>
+          <li onclick="oy_show_benefit()" style="display:none">No&nbsp;&nbsp;✖</li>
         </ul>
         <div id="div_oy_note" onclick="oy_hide_note()">
           <img src="images/emoji_kelian.jpg" alt="" /><br />请告诉我Yes！
@@ -97,8 +95,17 @@
 
   </div>
 
-
+  <script src="js/jweixin-1.2.0.js"></script>
   <script>
+    function audioAutoPlay(id) {
+      var audio = document.getElemtByID(id);
+      audio.play();
+      document.adEventListener("WeixinJSBridgeReady",function(){
+        audio.play();
+      }, false);            
+    }
+    audioAutoPlay('audio_music');
+    
     //判断客户端设备，选择写入meta
     function init_viewport() {
       if (navigator.userAgent.indexOf("Android") != -1) {
@@ -140,7 +147,7 @@
     console.log("theme ->" + theme);
     var theme_content = {
       pure_words_content:
-        "遇见你，是我所有美好故事的开始，看见你的第一眼，上帝就在我耳边说了四个字，在劫难逃!\n你的过去我来不及参与，你的未来我一定奉陪到底！\n我爱你！<um style='color: #F44336;'>💕</um>",
+        "嘿，公主殿下：\n\n收到这封信时，希望你不会感到惊讶。如果你有点惊讶的话，请摸摸头。我喜欢你，你应该，也知道。\n\n有同事曾经问过我，你是不是喜欢露露，表现的也太明显了，也有同事在我去找你的时候，眼神中满是鼓励。喜欢这种情绪确实很难隐藏起来，自18年开始，我就喜欢你，你很漂亮、可爱，我常常忍不住想跟你聊天、一起打球。可惜因为种种原因，我失去了公主殿下的四年时光。\n\n我很庆幸，一次羽毛球后的饭局让我重新认识了你。我很好奇，你为什么会给孩子写信，所以我认真看你推荐的电影，写感想并与你交流。你的生活中充满爱与希望，你总是关心别人的感受，你对爱情有一种执着，这让我产生了在任何一个异性那里都没有过的强烈共鸣。\n\n我喜欢你的颜值，从5年前到现在，一直没有变。我害怕因为颜值去喜欢一个人，因为时间会变，人会变。现在我更喜欢你有趣的精神世界以及善良利他的人格特质。这些所有的一切都告诉我，你是一个非常优秀且值得珍惜的人，我不能错过，所以我写了这封信，以表达我的情感。\n\n我想跟你建立一种叫做情侣的亲密关系。这样的话我们就可以一直聊下去、玩下去、相伴一生。我希望能为你撑伞，跟你一起奔跑；我希望能和你一起去看海，一起看日出日落；我希望牵着你的手一起往前走，永远永远。我相信，在一起，我们会更有勇气面对生活的各种困难与磨练；我相信，在一起，我们可以共同分享生活的喜悦和快乐。\n\n我很忐忑，已经很久没有过这种感觉了。我不知道你是否了解我，作为建立亲密关系的基础。我很害怕这封信会影响我们的朋友关系，我更害怕不表达自己的情感会留一辈子遗憾，毕竟已经有这么多人给你介绍对象了。\n\n我知道，你肯定对我也有好感，但是你会有自己的想法与期望。希望我的表白不会让你感到压力，我只是渲泄出我最真实的感情，而且我确信哪怕你还没做好准备或者因为某些原因不合适，不会影响我们目前的状态。所以请放轻松，也请认真思考，尊重你的一切决定，我们可以一起探讨未来的可能。\n\n今天是2023年1月3日，我想许你一生，希望可以换你一世。\n\n你愿意做为女朋友吗？<um style='color: #F44336;'>💕</um>\n\nDreamer\n2023年1月3日",
       typed_bool: "typed_y",
       cursor_char: "cursor_heart",
       bg_style_pure_words: "bg_opacity",
@@ -281,9 +288,9 @@
     }
     var start_content = {
       chase_title:
-        "做我女朋友好不好<um style='color: #F44336;'>！</um>",
+        "我喜欢你，你应该，也知道~</um>",
       chase_text:
-        "承蒙你的出现，够我喜欢好多年，我希望，以后你能用我的名字拒绝所有人<um style='color: #F44336;'>💕</um>",
+        "1月2日清晨的大海，希望你会喜欢。<um style='color: #F44336;'>💕</um>",
       chase_benefit: [
         "你是我拔掉氧气罐都想吻的人",
         "你是我跑完8000米还想拥抱的人",
@@ -293,9 +300,9 @@
         "你是我穷极一生不想醒来的梦",
       ],
       bg_style: "bg_custom",
-      bg_img: "images/2.jpg",
+      bg_img: "images/1.jpg",
       img_bool: "img_true",
-      img_src: "images/1.gif",
+      img_src: "images/pic-sea.jpg",
     }; //可能为null
     console.log(start_content);
     var start_id;
@@ -362,7 +369,6 @@
   <!-- JQuery -->
   <script src="js/typed.min.js"></script>
   <script src="js/start_onlyyou.js"></script>
-  <script src="js/jweixin-1.2.0.js"></script>
   <script src="js/theme_common.js"></script>
 </body>
 
