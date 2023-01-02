@@ -97,14 +97,14 @@
 
   <script src="js/jweixin-1.2.0.js"></script>
   <script>
-    function audioAutoPlay(id) {
-      var audio = document.getElementById(id);
-      audio.play();
-      document.adEventListener("WeixinJSBridgeReady",function(){
-        audio.play();
-      }, false);            
-    }
-    audioAutoPlay('audio_music');
+      function audioAutoPlay(id){
+       var audio = document.getElementById(id);
+       audio.play();
+       document.addEventListener("WeixinJSBridgeReady", function () {
+	       audio.play();
+       }, false);
+     }
+     audioAutoPlay('audio_music');
     
     //判断客户端设备，选择写入meta
     function init_viewport() {
