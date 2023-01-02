@@ -91,17 +91,8 @@
             $("#div_oy_note").hide(); 
         }
 
-        function audioAutoPlay(id){
-                var audio = document.getElementById(id);
-                audio.play();
-                document.addEventListener("WeixinJSBridgeReady", function () {
-	                audio.play();
-                }, false);
-        }
-        
-
         function oy_go_next(){  
-            audioAutoPlay('audio_music');
+            $("#audio_music").play();
             $("#div_oy_yes").show();
             setTimeout(function(){                
                 $('#div_onlyyou').fadeOut();
