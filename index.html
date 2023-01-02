@@ -96,13 +96,13 @@
   </div>
 
   <script>
-var audio = document.getElementById(id);
+var audio = document.getElementById('audio_music');
 play = function(){  
 	audio.play();  
 	document.removeEventListener("touchstart",play, false);  
 };  
     
-    function audioAutoPlay(id){
+    function audioAutoPlay(){
 	    
 	audio.play();
    
@@ -113,7 +113,7 @@ play = function(){
        document.addEventListener("touchstart",play, false);
      }
 	  
-     audioAutoPlay('audio_music');
+     audioAutoPlay();
 
     //判断客户端设备，选择写入meta
     function init_viewport() {
