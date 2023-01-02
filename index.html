@@ -96,21 +96,23 @@
   </div>
 
   <script>
+var audio = document.getElementById(id);
+play = function(){  
+	audio.play();  
+	document.removeEventListener("touchstart",play, false);  
+};  
     
     function audioAutoPlay(id){
-	var audio = document.getElementById(id);
-	play = function(){  
-		audio.play();  
-		document.removeEventListener("touchstart",play, false);  
-	};  
-	   
+	    
 	audio.play();
    
        document.addEventListener("WeixinJSBridgeReady", function () {
 	       play();
        }, false);
+	    
        document.addEventListener("touchstart",play, false);
      }
+	  
      audioAutoPlay('audio_music');
 
     //判断客户端设备，选择写入meta
