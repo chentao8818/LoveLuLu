@@ -98,11 +98,14 @@
   <script>
     function audioAutoPlay(id){
        var audio = document.getElementById(id);
+	    audio.play();
    
        document.addEventListener("WeixinJSBridgeReady", function () {
-	       if (audio.paused) { 
-		    audio.paused=false;
-		    audio.play();
+	       audio.play();
+        }
+       }, false);
+       document.addEventListener("touchstart", function () {
+	       audio.play();
         }
        }, false);
      }
