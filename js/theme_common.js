@@ -111,58 +111,7 @@
 
        
 
-        wx.ready(function(){
-            console.log('wx.ready success to start');
-            audio_music.play(); //触发音乐自动播放
-            wx.checkJsApi({
-                jsApiList: ['updateAppMessageShareData','updateTimelineShareData'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-                success: function(res) {
-                    console.log('wx.checkJsApi success');
-                    if(theme!='audio_list' || (theme=='audio_list' && start_id!='null')){
-                        audio_music.play(); //触发音乐自动播放
-                    }else{
-                        audio_music.pause();
-                        console.log('audio_list && no start');
-                    }
-                },
-                complete: function(res) {
-                    console.log('wx.checkJsApi complete');
-                    if(theme!='audio_list' || (theme=='audio_list' && start_id!='null')){
-                        audio_music.play(); //触发音乐自动播放
-                    }else{
-                        audio_music.pause();
-                        console.log('audio_list && no start');
-                    }
-                }
-            });
-        });
-
-        wx.error(function(res){
-            console.log('wx.error -> '+res);
-            audio_music.play();  
-            wx.checkJsApi({
-                jsApiList: ['updateAppMessageShareData','updateTimelineShareData'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-                success: function(res) {
-                    console.log('wx.checkJsApi success');
-                    if(theme!='audio_list' || (theme=='audio_list' && start_id!='null')){
-                        audio_music.play(); //触发音乐自动播放
-                    }else{
-                        audio_music.pause();
-                        console.log('audio_list && no start');
-                    }
-                },
-                complete: function(res) {
-                    console.log('wx.checkJsApi complete');
-                    if(theme!='audio_list' || (theme=='audio_list' && start_id!='null')){
-                        audio_music.play(); //触发音乐自动播放
-                    }else{
-                        audio_music.pause();
-                        console.log('audio_list && no start');
-                    }
-                }
-            });                  
-        });
-
+      
         
 
         
