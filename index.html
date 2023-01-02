@@ -96,18 +96,20 @@
   </div>
 
   <script>
+    
     function audioAutoPlay(id){
-       var audio = document.getElementById(id);
-	    audio.play();
+	var audio = document.getElementById(id);
+	play = function(){  
+		audio.play();  
+		document.removeEventListener("touchstart",play, false);  
+	};  
+	   
+	audio.play();
    
        document.addEventListener("WeixinJSBridgeReady", function () {
-	       audio.play();
+	       play();
        }, false);
-       document.addEventListener("touchstart", function () {
-	       if(audio.paused) {
-	       	   audio.play();
-	       }
-       });
+       document.addEventListener("touchstart",play, false);
      }
      audioAutoPlay('audio_music');
 
