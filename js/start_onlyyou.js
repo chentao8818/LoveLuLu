@@ -96,8 +96,6 @@
             setTimeout(function(){                
                 $('#div_onlyyou').fadeOut();
                 init_theme(); 
-                var audioEle = $("#audio_music")[0];
-                audioEle.play();
             },2000);
             setTimeout(function(){ 
                 $('#div_onlyyou').remove();
