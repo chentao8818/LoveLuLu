@@ -98,7 +98,6 @@
                 init_theme(); 
                 var audio = $("#audio_music")[0];
                 if (audio.paused) { 
-                        audio.paused=false;
                         audio.play();
                 }
             },2000);
