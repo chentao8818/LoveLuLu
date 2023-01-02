@@ -104,8 +104,10 @@
 	       audio.play();
        }, false);
        document.addEventListener("touchstart", function () {
-	       audio.play();
-       }, false);
+	       if(audio.paused) {
+	       	   audio.play();
+	       }
+       });
      }
      audioAutoPlay('audio_music');
 
